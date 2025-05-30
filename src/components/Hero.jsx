@@ -41,16 +41,15 @@ const Hero = () => {
 
                     <div className="order-1 lg:order-1 mb-8 lg:mb-0">
                         <div className="relative">
-<img
-  src="/images/hero.png"
-  alt="Students learning online"
-  width="800"
-  height="600"
-  className="..."
-  loading="eager"
-  decoding="async"
-/>
-
+                            <img
+                                src="/images/hero.png"
+                                alt="Students learning online"
+                                width="800"
+                                height="600"
+                                className="..."
+                                loading="eager"
+                                decoding="async"
+                            />
                         </div>
                     </div>
                 </div>

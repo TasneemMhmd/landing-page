@@ -1,13 +1,11 @@
 import React from 'react';
-import { BookOpen, Facebook, Twitter, Instagram, Linkedin, Mail } from 'lucide-react';
+import { BookOpen, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-slate-800 text-white">
+        <footer className="bg-slate-800 text-white md:text-center">
             <div className="max-w-6xl mx-auto px-4 py-6">
-
-                <div className="grid md:grid-cols-4 gap-8 mb-4">
-
+                <div className="grid md:grid-cols-4 gap-8 mb-4 text-center">
                     <div className="col-span-1 md:col-span-2">
                         <div className="flex items-center space-x-2 mb-4">
                             <div className="bg-indigo-600 p-2 rounded-lg">
@@ -17,7 +15,6 @@ const Footer = () => {
                         <p className="text-slate-300 mb-6 max-w-md">
                             Explore our collection of high-quality courses and learn at your own pace with top instructors.
                         </p>
-
                         <div className="flex space-x-4">
                             <a href="#" className="bg-slate-700 hover:bg-indigo-600 p-2 rounded-lg transition-colors">
                                 <Facebook className="w-5 h-5" />
@@ -33,7 +30,6 @@ const Footer = () => {
                             </a>
                         </div>
                     </div>
-
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
                         <ul className="space-y-2">
@@ -59,8 +55,6 @@ const Footer = () => {
                             </li>
                         </ul>
                     </div>
-
-                    {/* Support */}
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Support</h3>
                         <ul className="space-y-2">
@@ -87,10 +81,9 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                {/* Bottom Footer */}
                 <div className="border-t border-slate-700 pt-4">
                     <div className="md:text-center">
-                        <p className="text-slate-400 text-sm">
+                        <p className="text-slate-400 text-sm ">
                             © 2025 Tasneem. All rights reserved.
                         </p>
 

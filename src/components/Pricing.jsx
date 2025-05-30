@@ -70,10 +70,9 @@ const Pricing = () => {
                         Start free or upgrade to unlock premium features and accelerate your learning
                     </p>
                 </div>
-
                 <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     {plans.map((plan, index) => (
-                        <div
+                        <div 
                             key={index}
                             className={`bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 relative transition-all duration-700 hover:shadow-2xl hover:-translate-y-4 border border-white/20 group ${
                                 plan.popular 
@@ -106,7 +105,6 @@ const Pricing = () => {
                                         <span className="text-slate-600 ml-1">{plan.period}</span>
                                     </div>
                                 </div>
-
                                 <div className="mb-8">
                                     <ul className="space-y-4">
                                         {plan.features.map((feature, featureIndex) => (
@@ -119,7 +117,6 @@ const Pricing = () => {
                                         ))}
                                     </ul>
                                 </div>
-
                                 <button
                                     className={`w-full py-4 px-6 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 active:scale-95 relative overflow-hidden ${
                                         plan.popular
@@ -136,7 +133,6 @@ const Pricing = () => {
                         </div>
                     ))}
                 </div>
-
                 <div
                     className={`text-center mt-16 transform transition-all duration-1000 delay-1000 }
                         }`}

@@ -17,7 +17,6 @@ const Header = () => {
                             <BookOpen className="h-6 w-6 text-white" />
                         </div>
                     </div>
-
                     <div className="hidden md:block">
                         <div className="flex items-center space-x-8">
                             <a
@@ -46,7 +45,6 @@ const Header = () => {
                             </a>
                         </div>
                     </div>
-
                     <div className="md:hidden">
                         <button
                             onClick={toggleMenu}
@@ -60,7 +58,6 @@ const Header = () => {
                         </button>
                     </div>
                 </div>
-
                 {isOpen && (
                     <div className="md:hidden">
                         <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg mt-2 shadow-lg border border-slate-200">
