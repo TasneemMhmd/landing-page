@@ -89,12 +89,13 @@ const Features = () => {
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {features.map((feature, index) => {
                         const colors = getColorClasses(feature.color);
-                        
+
                         return (
                             <div
                                 key={index}
                                 className="relative text-center p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 group overflow-hidden bg-gradient-to-br from-white via-slate-50 to-gray-100 hover:from-white hover:via-white hover:to-slate-50 transform hover:-translate-y-2 border border-slate-200/50 hover:border-white"
-                            >                                <div className={`absolute -top-2 -right-2 w-12 h-12 ${colors.shapeColor} rounded-full opacity-60`}></div>
+                            >
+                                <div className={`absolute -top-2 -right-2 w-12 h-12 ${colors.shapeColor} rounded-full opacity-60`}></div>
                                 <div className={`absolute -bottom-1 -left-1 w-8 h-8 ${colors.shapeColor} rounded-full opacity-40`}></div>
                                 <div className={`absolute top-1/3 -right-1 w-6 h-6 ${colors.shapeColor} rotate-45 opacity-50`}></div>
                                 <div className={`absolute top-4 left-4 w-3 h-3 ${colors.shapeColor} rounded-full opacity-30`}></div>
