@@ -9,7 +9,7 @@ const Header = () => {
     };
 
     return (
-        <nav className="bg-slate-50 shadow-lg border-b border-slate-200">
+        <nav className="bg-slate-50 shadow-lg border-b border-slate-200 fixed top-0 left-0 right-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <div className="flex items-center space-x-2">
@@ -59,8 +59,8 @@ const Header = () => {
                     </div>
                 </div>
                 {isOpen && (
-                    <div className="md:hidden">
-                        <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg mt-2 shadow-lg border border-slate-200">
+                    <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border border-slate-200">
+                        <div className="px-2 pt-2 pb-3 space-y-1">
                             <a
                                 href="#home"
                                 className="text-slate-700 hover:text-indigo-600 hover:bg-slate-50 block text-center px-3 py-2 rounded-md text-base font-medium transition-all duration-200"

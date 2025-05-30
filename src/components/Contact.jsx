@@ -140,8 +140,16 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="bg-slate-50 py-20">
-            <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="contact" className="bg-slate-50 py-20 relative overflow-hidden">
+            <div className="absolute top-16 left-16 w-32 h-32 bg-gradient-to-br from-indigo-200/30 to-purple-300/30 rounded-full opacity-60"></div>
+            <div className="absolute top-32 right-20 w-24 h-24 bg-gradient-to-br from-cyan-200/30 to-blue-300/30 rotate-45 opacity-50"></div>
+            <div className="absolute bottom-24 left-12 w-20 h-20 bg-gradient-to-br from-emerald-200/30 to-teal-300/30 rounded-full opacity-55"></div>
+            <div className="absolute bottom-16 right-16 w-28 h-28 bg-gradient-to-br from-rose-200/30 to-pink-300/30 rotate-45 opacity-45"></div>
+            <div className="absolute top-1/2 left-8 w-16 h-16 bg-gradient-to-br from-amber-200/30 to-yellow-300/30 rounded-full opacity-40"></div>
+            <div className="absolute top-1/3 right-8 w-14 h-14 bg-gradient-to-br from-violet-200/30 to-purple-300/30 rotate-45 opacity-50"></div>
+            <div className="absolute bottom-1/3 left-1/4 w-12 h-12 bg-gradient-to-br from-green-200/30 to-emerald-300/30 rounded-full opacity-35"></div>
+            <div className="absolute top-1/4 right-1/3 w-18 h-18 bg-gradient-to-br from-orange-200/30 to-red-300/30 rotate-45 opacity-40"></div>
+            <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold text-slate-800 mb-4">
                         Get In Touch
@@ -150,150 +158,152 @@ const Contact = () => {
                         Have questions? We'd love to hear from you.
                     </p>
                 </div>
-                <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8">
-                    <AlertComponent alert={alert} onClose={closeAlert} />
-                    
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                        <div>
-                            <label
-                                htmlFor="name"
-                                className="block text-sm font-medium text-slate-700 mb-2"
-                            >
-                                Full Name *
-                            </label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${
-                                    errors.name 
-                                        ? 'border-red-300 bg-red-50' 
-                                        : 'border-slate-300'
-                                }`}
-                                placeholder="Enter your full name"
-                                disabled={isSubmitting}
-                            />
-                            {errors.name && (
-                                <p className="mt-1 text-sm text-red-600 flex items-center">
-                                    <AlertCircle className="w-4 h-4 mr-1" />
-                                    {errors.name}
-                                </p>
-                            )}
-                        </div>
-                        <div>
-                            <label
-                                htmlFor="email"
-                                className="block text-sm font-medium text-slate-700 mb-2"
-                            >
-                                Email Address *
-                            </label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${
-                                    errors.email 
-                                        ? 'border-red-300 bg-red-50' 
-                                        : 'border-slate-300'
-                                }`}
-                                placeholder="Enter your email address"
-                                disabled={isSubmitting}
-                            />
-                            {errors.email && (
-                                <p className="mt-1 text-sm text-red-600 flex items-center">
-                                    <AlertCircle className="w-4 h-4 mr-1" />
-                                    {errors.email}
-                                </p>
-                            )}
-                        </div>
-                        <div>
-                            <label
-                                htmlFor="subject"
-                                className="block text-sm font-medium text-slate-700 mb-2"
-                            >
-                                Subject *
-                            </label>
-                            <input
-                                type="text"
-                                id="subject"
-                                name="subject"
-                                value={formData.subject}
-                                onChange={handleChange}
-                                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${
-                                    errors.subject 
-                                        ? 'border-red-300 bg-red-50' 
-                                        : 'border-slate-300'
-                                }`}
-                                placeholder="What's this about?"
-                                disabled={isSubmitting}
-                            />
-                            {errors.subject && (
-                                <p className="mt-1 text-sm text-red-600 flex items-center">
-                                    <AlertCircle className="w-4 h-4 mr-1" />
-                                    {errors.subject}
-                                </p>
-                            )}
-                        </div>
-                        <div>
-                            <label
-                                htmlFor="message"
-                                className="block text-sm font-medium text-slate-700 mb-2"
-                            >
-                                Message *
-                            </label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                value={formData.message}
-                                onChange={handleChange}
-                                rows={5}
-                                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors resize-none ${
-                                    errors.message 
-                                        ? 'border-red-300 bg-red-50' 
-                                        : 'border-slate-300'
-                                }`}
-                                placeholder="Tell us more about your inquiry..."
-                                disabled={isSubmitting}
-                            />
-                            {errors.message && (
-                                <p className="mt-1 text-sm text-red-600 flex items-center">
-                                    <AlertCircle className="w-4 h-4 mr-1" />
-                                    {errors.message}
-                                </p>
-                            )}
-                            <p className="mt-1 text-sm text-slate-500">
-                                {formData.message.length}/500 characters
-                            </p>
-                        </div>
+                <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 relative overflow-hidden">
 
-                        <div>
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className={`w-full px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center group shadow-md hover:shadow-lg ${
-                                    isSubmitting
-                                        ? 'bg-indigo-400 cursor-not-allowed'
-                                        : 'bg-indigo-600 hover:bg-indigo-700'
-                                } text-white`}
-                            >
-                                {isSubmitting ? (
-                                    <>
-                                        <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                                        Sending...
-                                    </>
-                                ) : (
-                                    <>
-                                        Send Message
-                                        <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                    </>
+                    <div className="relative z-10">
+                        <AlertComponent alert={alert} onClose={closeAlert} />
+                        <div className="space-y-6">
+                            <div>
+                                <label
+                                    htmlFor="name"
+                                    className="block text-sm font-medium text-slate-700 mb-2"
+                                >
+                                    Full Name *
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${
+                                        errors.name 
+                                            ? 'border-red-300 bg-red-50' 
+                                            : 'border-slate-300'
+                                    }`}
+                                    placeholder="Enter your full name"
+                                    disabled={isSubmitting}
+                                />
+                                {errors.name && (
+                                    <p className="mt-1 text-sm text-red-600 flex items-center">
+                                        <AlertCircle className="w-4 h-4 mr-1" />
+                                        {errors.name}
+                                    </p>
                                 )}
-                            </button>
+                            </div>
+                            <div>
+                                <label
+                                    htmlFor="email"
+                                    className="block text-sm font-medium text-slate-700 mb-2"
+                                >
+                                    Email Address *
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${
+                                        errors.email 
+                                            ? 'border-red-300 bg-red-50' 
+                                            : 'border-slate-300'
+                                    }`}
+                                    placeholder="Enter your email address"
+                                    disabled={isSubmitting}
+                                />
+                                {errors.email && (
+                                    <p className="mt-1 text-sm text-red-600 flex items-center">
+                                        <AlertCircle className="w-4 h-4 mr-1" />
+                                        {errors.email}
+                                    </p>
+                                )}
+                            </div>
+                            <div>
+                                <label
+                                    htmlFor="subject"
+                                    className="block text-sm font-medium text-slate-700 mb-2"
+                                >
+                                    Subject *
+                                </label>
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${
+                                        errors.subject 
+                                            ? 'border-red-300 bg-red-50' 
+                                            : 'border-slate-300'
+                                    }`}
+                                    placeholder="What's this about?"
+                                    disabled={isSubmitting}
+                                />
+                                {errors.subject && (
+                                    <p className="mt-1 text-sm text-red-600 flex items-center">
+                                        <AlertCircle className="w-4 h-4 mr-1" />
+                                        {errors.subject}
+                                    </p>
+                                )}
+                            </div>
+                            <div>
+                                <label
+                                    htmlFor="message"
+                                    className="block text-sm font-medium text-slate-700 mb-2"
+                                >
+                                    Message *
+                                </label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    rows={5}
+                                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors resize-none ${
+                                        errors.message 
+                                            ? 'border-red-300 bg-red-50' 
+                                            : 'border-slate-300'
+                                    }`}
+                                    placeholder="Tell us more about your inquiry..."
+                                    disabled={isSubmitting}
+                                />
+                                {errors.message && (
+                                    <p className="mt-1 text-sm text-red-600 flex items-center">
+                                        <AlertCircle className="w-4 h-4 mr-1" />
+                                        {errors.message}
+                                    </p>
+                                )}
+                                <p className="mt-1 text-sm text-slate-500">
+                                    {formData.message.length}/500 characters
+                                </p>
+                            </div>
+                            <div>
+                                <button
+                                    type="submit"
+                                    onClick={handleSubmit}
+                                    disabled={isSubmitting}
+                                    className={`w-full px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center group shadow-md hover:shadow-lg ${
+                                        isSubmitting
+                                            ? 'bg-indigo-400 cursor-not-allowed'
+                                            : 'bg-indigo-600 hover:bg-indigo-700'
+                                    } text-white`}
+                                >
+                                    {isSubmitting ? (
+                                        <>
+                                            <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                                            Sending...
+                                        </>
+                                    ) : (
+                                        <>
+                                            Send Message
+                                            <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                        </>
+                                    )}
+                                </button>
+                            </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>
